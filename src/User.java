@@ -13,7 +13,7 @@ public class User extends Player {
 
             if (cellOptional.isPresent()) {
                 Cell cell = cellOptional.get();
-                if (cell.getMark() == field.EMPTY_CELL) {
+                if (cell.getMark() == Field.EMPTY_CELL) {
                     cell.setMark(mark);
                     break;
                 } else {

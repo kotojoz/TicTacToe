@@ -76,7 +76,7 @@ public class Game {
     }
 
     private boolean noEmptyCells() {
-        return field.grid.values().stream().noneMatch(v -> v.getMark() == field.EMPTY_CELL);
+        return field.grid.values().stream().noneMatch(v -> v.getMark() == Field.EMPTY_CELL);
     }
 
     public void menu() {
@@ -99,14 +99,14 @@ public class Game {
         startNewGame();
 
         while (true) {
-            player1.makeAMove(field, field.X);
+            player1.makeAMove(field, Field.X);
             field.printField();
             analyzeGame();
             if (isGameOver()) {
                 break;
             }
 
-            player2.makeAMove(field, field.O);
+            player2.makeAMove(field, Field.O);
             field.printField();
             analyzeGame();
             if (isGameOver()) {
