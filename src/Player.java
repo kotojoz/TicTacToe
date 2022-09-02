@@ -14,7 +14,7 @@ abstract class Player {
             int number = random.nextInt((MAX - MIN + 1) + MIN);
             cell = field.grid.get(number);
 
-            if (cell != null && cell.getMark() == field.EMPTY_CELL) {
+            if (cell != null && cell.getMark() == Field.EMPTY_CELL) {
                 cell.setMark(mark);
                 break;
             }

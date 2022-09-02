@@ -5,14 +5,11 @@ import java.util.Map;
 
 public class Field {
 
-    private final int MAX_CELL_COUNT = 9;
-    private final int MAX_ROW_AND_COLUMN_COUNT = 3;
+    protected static final char X = 'X';
 
-    protected final char X = 'X';
+    protected static final char O = 'O';
 
-    protected final char O = 'O';
-
-    protected final char EMPTY_CELL = '_';
+    protected static final char EMPTY_CELL = '_';
 
     protected Map<Integer, Cell> grid;
 
@@ -25,6 +22,7 @@ public class Field {
         grid = new HashMap<>();
         int counter = 1;
 
+        int MAX_ROW_AND_COLUMN_COUNT = 3;
         for (int row = 1; row <= MAX_ROW_AND_COLUMN_COUNT; row++) {
             for (int column = 1; column <= MAX_ROW_AND_COLUMN_COUNT; column++) {
                 grid.put(counter++, new Cell(row, column, EMPTY_CELL));
@@ -35,6 +33,7 @@ public class Field {
     public void printField() {
         int cell_id = 1;
         System.out.println("---------");
+        int MAX_CELL_COUNT = 9;
         while (cell_id < MAX_CELL_COUNT) {
             int counter = 0;
             System.out.print("| ");

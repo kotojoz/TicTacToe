@@ -25,6 +25,7 @@ public class Game {
         players = new HashMap<>();
         players.put("user", new User());
         players.put("easy", new ComputerEasy());
+        players.put("medium", new ComputerMedium());
     }
 
     public static boolean isPlayer(String player) {
