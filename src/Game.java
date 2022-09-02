@@ -7,14 +7,18 @@ public class Game {
 
     private Field field;
 
+    private Player player1;
+
+    private Player player2;
+
     private static Map<String, Player> players;
 
     public Game() {
-        players = new HashMap<>();
         loadPlayers();
     }
 
     private void loadPlayers() {
+        players = new HashMap<>();
         players.put("user", new User());
         players.put("easy", new ComputerEasy());
     }
@@ -34,19 +38,21 @@ public class Game {
             String[] command = InputHandler.enterCommand();
             String START = "start";
             if (command[0].equals(START)) {
-                playGame(command);
+                player1 = players.get(command[1]);
+                player2 = players.get(command[2]);
+                playGame();
             } else {
                 isMenu = false;
             }
         }
     }
 
-    public void playGame(String[] command) {
+    public void playGame() {
         startNewGame();
         while (true) {
-            players.get(command[1]).makeAMove(field, field.X);
+            player1.makeAMove(field, field.X);
             field.printField();
-            players.get(command[2]).makeAMove(field, field.O);
+            player2.makeAMove(field, field.O);
             field.printField();
         }
     }

@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class Field {
 
+    private final int MAX_CELL_COUNT = 9;
     private final int MAX_ROW_AND_COLUMN_COUNT = 3;
 
     protected final char X = 'X';
@@ -32,11 +33,15 @@ public class Field {
     }
 
     public void printField() {
+        int cell_id = 1;
         System.out.println("---------");
-        for (int i = 0; i < MAX_ROW_AND_COLUMN_COUNT; i++) {
+        while (cell_id < MAX_CELL_COUNT) {
+            int counter = 0;
             System.out.print("| ");
-            for (int j = 1; j <= MAX_ROW_AND_COLUMN_COUNT; j++) {
-                System.out.print(grid.get(j + i).getMark() + " ");
+            while (counter < 3) {
+                System.out.print(grid.get(cell_id).getMark() + " ");
+                cell_id++;
+                counter++;
             }
             System.out.println("|");
         }
