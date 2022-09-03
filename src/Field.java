@@ -10,7 +10,7 @@ public class Field {
 
     protected static final char O = 'O';
 
-    protected static final char EMPTY_CELL = '_';
+    public static final char EMPTY_CELL = '_';
 
     public Map<Integer, Cell> grid;
 
