@@ -2,6 +2,7 @@ package src;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Field {
 
@@ -47,4 +48,13 @@ public class Field {
         System.out.println("---------");
     }
 
+    protected Cell findEmptyCell(Cell cell1, Cell cell2, Cell cell3) {
+        return Stream.of(cell1, cell2, cell3).filter(v -> v.getMark() == Field.EMPTY_CELL).findFirst().orElse(null);
+    }
+
+    protected int getCellId(Cell cell) {
+        Map.Entry<Integer, Cell> entry = grid.entrySet().stream().filter(v -> v.getValue().equals(cell)).findFirst().orElse(null);
+        assert entry != null;
+        return entry.getKey();
+    }
 }

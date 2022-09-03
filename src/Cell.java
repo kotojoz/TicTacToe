@@ -29,4 +29,6 @@ public class Cell {
     public void setMark(char mark) {
         this.mark = mark;
     }
+
+
 }
