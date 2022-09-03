@@ -26,6 +26,7 @@ public class Game {
         players.put("user", new User());
         players.put("easy", new ComputerEasy());
         players.put("medium", new ComputerMedium());
+        players.put("hard", new ComputerHard());
     }
 
     public static boolean isPlayer(String player) {
@@ -40,13 +41,13 @@ public class Game {
 
     private boolean isGameOver() {
         if (isWin_X) {
-            System.out.println("X wins");
+            System.out.println("X wins\n");
             return true;
         } else if (isWin_O) {
-            System.out.println("O wins");
+            System.out.println("O wins\n");
             return true;
         } else if (noEmptyCells()) {
-            System.out.println("Draw");
+            System.out.println("Draw\n");
             return true;
         } else {
             return false;

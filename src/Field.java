@@ -33,7 +33,7 @@ public class Field {
 
     public void printField() {
         int cell_id = 1;
-        System.out.println("---------");
+        System.out.println("\n---------");
         int MAX_CELL_COUNT = 9;
         while (cell_id < MAX_CELL_COUNT) {
             int counter = 0;
@@ -45,7 +45,7 @@ public class Field {
             }
             System.out.println("|");
         }
-        System.out.println("---------");
+        System.out.println("---------\n");
     }
 
     protected Cell findEmptyCell(Cell cell1, Cell cell2, Cell cell3) {
