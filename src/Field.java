@@ -12,7 +12,7 @@ public class Field {
 
     protected static final char EMPTY_CELL = '_';
 
-    protected Map<Integer, Cell> grid;
+    public Map<Integer, Cell> grid;
 
     public Field() {
         createField();
@@ -48,11 +48,11 @@ public class Field {
         System.out.println("---------\n");
     }
 
-    protected Cell findEmptyCell(Cell cell1, Cell cell2, Cell cell3) {
+    public Cell findEmptyCell(Cell cell1, Cell cell2, Cell cell3) {
         return Stream.of(cell1, cell2, cell3).filter(v -> v.getMark() == Field.EMPTY_CELL).findFirst().orElse(null);
     }
 
-    protected int getCellId(Cell cell) {
+    public int getCellId(Cell cell) {
         Map.Entry<Integer, Cell> entry = grid.entrySet().stream().filter(v -> v.getValue().equals(cell)).findFirst().orElse(null);
         assert entry != null;
         return entry.getKey();

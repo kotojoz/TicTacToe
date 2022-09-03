@@ -1,4 +1,8 @@
-package src;
+package src.players;
+
+import src.Cell;
+import src.Field;
+import src.InputHandler;
 
 import java.util.Optional;
 

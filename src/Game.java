@@ -1,5 +1,7 @@
 package src;
 
+import src.players.*;
+
 import java.util.HashMap;
 import java.util.Map;
 

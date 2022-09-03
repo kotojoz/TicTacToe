@@ -1,4 +1,7 @@
-package src;
+package src.players;
+
+import src.Cell;
+import src.Field;
 
 public class ComputerMedium extends Player {
 

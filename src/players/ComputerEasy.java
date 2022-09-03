@@ -1,4 +1,6 @@
-package src;
+package src.players;
+
+import src.Field;
 
 public class ComputerEasy extends Player {
 

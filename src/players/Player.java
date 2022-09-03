@@ -1,8 +1,11 @@
-package src;
+package src.players;
+
+import src.Cell;
+import src.Field;
 
 import java.util.Random;
 
-abstract class Player {
+public abstract class Player {
 
     private final Random random = new Random();
 
