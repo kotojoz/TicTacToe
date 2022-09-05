@@ -12,7 +12,7 @@ public class User extends Player {
         while (true) {
 
             int[] numbers = InputHandler.enterCoordinates();
-            Optional<Cell> cellOptional = field.grid.values().stream()
+            Optional<Cell> cellOptional = field.board.values().stream()
                     .filter(v -> v.getRow() == numbers[0] && v.getColumn() == numbers[1]).findFirst();
 
             if (cellOptional.isPresent()) {

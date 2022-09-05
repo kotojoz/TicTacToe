@@ -10,7 +10,7 @@ public class ComputerMedium extends Player {
     @Override
     public void makeAMove(Field field, char mark) {
         if (isBestMove(field)) {
-            field.grid.get(bestMove).setMark(mark);
+            field.board.get(bestMove).setMark(mark);
         } else {
             makeRandomMove(field, mark);
         }
@@ -18,16 +18,16 @@ public class ComputerMedium extends Player {
     }
 
     private boolean isBestMove(Field field) {
-        return checkResult(field.grid.get(1), field.grid.get(2), field.grid.get(3), field) ||
-                checkResult(field.grid.get(4), field.grid.get(5), field.grid.get(6), field) ||
-                checkResult(field.grid.get(7), field.grid.get(8), field.grid.get(9), field) ||
+        return checkResult(field.board.get(1), field.board.get(2), field.board.get(3), field) ||
+                checkResult(field.board.get(4), field.board.get(5), field.board.get(6), field) ||
+                checkResult(field.board.get(7), field.board.get(8), field.board.get(9), field) ||
 
-                checkResult(field.grid.get(1), field.grid.get(4), field.grid.get(7), field) ||
-                checkResult(field.grid.get(2), field.grid.get(5), field.grid.get(8), field) ||
-                checkResult(field.grid.get(3), field.grid.get(6), field.grid.get(9), field) ||
+                checkResult(field.board.get(1), field.board.get(4), field.board.get(7), field) ||
+                checkResult(field.board.get(2), field.board.get(5), field.board.get(8), field) ||
+                checkResult(field.board.get(3), field.board.get(6), field.board.get(9), field) ||
 
-                checkResult(field.grid.get(1), field.grid.get(5), field.grid.get(9), field) ||
-                checkResult(field.grid.get(3), field.grid.get(5), field.grid.get(7), field);
+                checkResult(field.board.get(1), field.board.get(5), field.board.get(9), field) ||
+                checkResult(field.board.get(3), field.board.get(5), field.board.get(7), field);
     }
 
     private boolean checkResult(Cell cell1, Cell cell2, Cell cell3, Field field) {

@@ -6,13 +6,13 @@ import java.util.stream.Stream;
 
 public class Field {
 
-    protected static final char X = 'X';
+    public static final char X = 'X';
 
-    protected static final char O = 'O';
+    public static final char O = 'O';
 
     public static final char EMPTY_CELL = '_';
 
-    public Map<Integer, Cell> grid;
+    public Map<Integer, Cell> board;
 
     public Field() {
         createField();
@@ -20,13 +20,13 @@ public class Field {
     }
 
     public void createField() {
-        grid = new HashMap<>();
+        board = new HashMap<>();
         int counter = 1;
 
         int MAX_ROW_AND_COLUMN_COUNT = 3;
         for (int row = 1; row <= MAX_ROW_AND_COLUMN_COUNT; row++) {
             for (int column = 1; column <= MAX_ROW_AND_COLUMN_COUNT; column++) {
-                grid.put(counter++, new Cell(row, column, EMPTY_CELL));
+                board.put(counter++, new Cell(row, column, EMPTY_CELL));
             }
         }
     }
@@ -39,7 +39,7 @@ public class Field {
             int counter = 0;
             System.out.print("| ");
             while (counter < 3) {
-                System.out.print(grid.get(cell_id).getMark() + " ");
+                System.out.print(board.get(cell_id).getMark() + " ");
                 cell_id++;
                 counter++;
             }
@@ -53,8 +53,10 @@ public class Field {
     }
 
     public int getCellId(Cell cell) {
-        Map.Entry<Integer, Cell> entry = grid.entrySet().stream().filter(v -> v.getValue().equals(cell)).findFirst().orElse(null);
+        Map.Entry<Integer, Cell> entry = board.entrySet().stream().filter(v -> v.getValue().equals(cell)).findFirst().orElse(null);
         assert entry != null;
         return entry.getKey();
     }
+
+
 }
