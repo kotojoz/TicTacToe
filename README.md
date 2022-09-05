@@ -25,3 +25,5 @@ How to enter coordinates?
 First parameter is row number and second parameter is column number
 
 | 1-1 | 1-2 | 1-3 |
+
+Example: "1 2"
